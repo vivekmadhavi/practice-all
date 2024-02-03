@@ -1,0 +1,57 @@
+print() - use to display output on screen
+input()/getpass():-echo/non echo - to make the input from the user
+round() -  to control fractional part
+
+operators   = assignment
+	    arithmetic:-	+ addition
+	    			* multiplication
+	    			- subtraction
+	    			/ division
+
+	     relational:-	==,!=,<,<=,>,>=
+
+	     logical:-		or,and,not
+
+int()  use for integers used for convert string into integer
+float() use for real number
+
+
+selection if,if and else statement, if elif match case //one time
+
+iteration:-		while statement 
+			for statement:- i in range	//many times
+
+string : - (+ is used for concatination / * repitation)
+
+function case:-- lower(),upper(),swapcase(),title()-first word capital,capitaliza()
+	 tester:-- islower(), isupper(),isalphaber(),isdigit(), isalnum(),isspace()
+	 space:-   strip(),lstrip(),rstrip()
+
+
+function(it is the group of statemnet that perform specific task)
+	def is used to define the function
+	then call that function
+
+
+data types:-int float string,boolen
+adv data type:- []-list add and remove element mutable variable
+		()-tupl cant add or remove immutable  constat
+		{}-set
+		{:}-dictionary key and value
+ 
+types of programming:-
+			sp-simple programming
+			no function, no class, n object
+			pop-procedural oriented programming
+			fn define and fn call
+			oop - object oriented programming
+			class define and object create
+class		encapsulation		var + method
+object 		instantiation		instance of class
+initialize      initialization		__init__()
+
+exception handle
+
+try:
+
+except code to handle exception:-1)single ,2)multiple,3)multi,4)default

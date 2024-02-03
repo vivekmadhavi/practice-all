@@ -1,0 +1,71 @@
+#import libraries
+from tkinter import Tk,Radiobutton
+from tkinter import Button
+from tkinter import Label,StringVar,IntVar,Entry
+
+class TipCalculator():
+    def __init__(self):
+        w=Tk()
+        w.title("Tip Calculator")
+        w.geometry("650x300")
+
+        # Intialize the variables
+        self.m_cost = StringVar()
+        self.t_p = IntVar()
+        self.tip = StringVar()
+        self.total_cost = StringVar()
+
+        t_p = Label(w, text="Tip Percentage", font=('Calibri 20 bold'), bg="Blue", fg="white")
+        t_p.grid(column=0, row=0, padx=40, pady=10)
+        five_tip = Radiobutton(w, text="5%", variable=self.t_p, value=5)
+        five_tip.grid(column=1, row=0)
+        ten_tip = Radiobutton(w, text="10%", variable=self.t_p, value=10)
+        ten_tip.grid(column=2, row=0)
+        fifteen_tip = Radiobutton(w, text="15%", variable=self.t_p, value=15)
+        fifteen_tip.grid(column=3, row=0)
+        twenty_tip = Radiobutton(w, text="20%", variable=self.t_p, value=20)
+        twenty_tip.grid(column=4, row=0)
+        twentyfive_tip = Radiobutton(w, text="25%", variable=self.t_p, value=25)
+        twentyfive_tip.grid(column=5, row=0)
+        thirty_tip = Radiobutton(w, text="30%", variable=self.t_p, value=30)
+        thirty_tip.grid(column=6, row=0)
+
+        bill_details = Label(w, text="Bill Details", font=('Calibri 20 bold'), bg="Blue", fg="white")
+        bill_details.grid(column=0, row=1,padx=10,pady=10)
+        bill_amount_entry = Entry(w, textvariable=self.m_cost, width=20)
+        bill_amount_entry.grid(column=1, row=1, padx=15)
+
+        tip_amount_lbl = Label(w, text="Tip Amount entry", font=('Calibri 20 bold'), bg="blue", fg="white")
+        tip_amount_lbl.grid(column=0, row=2,padx=10,pady=10)
+        tip_amount_entry = Entry(w, textvariable=self.tip, width=20)
+        tip_amount_entry.grid(column=1, row=2, padx=10)
+
+        bill_total_lbl = Label(w, text="Total Bill", font=('Calibri 20 bold'), bg="Blue", fg="white")
+        bill_total_lbl.grid(column=0, row=3,padx=10,pady=10)
+        bill_total_entry = Entry(w, textvariable=self.total_cost, width=20)
+        bill_total_entry.grid(column=1, row=3,padx=10)
+
+        clear_btn = Button(w, text="reset", bg="Orange", font=('Calibri 20 bold'), fg="white", command=self.reset)
+        clear_btn.grid(column=0, row=4)
+
+        calculate_btn = Button(w, text="Calculate", bg="Blue", font=('Calibri 20 bold'), fg="white",
+                               command=self.calculate)
+        calculate_btn.grid(column=1, row=4)
+
+        w.mainloop()
+
+    def calculate(self):
+        p_tip = float(self.m_cost.get())
+        per = self.t_p.get() / 100
+        tip_amount_entry_var = p_tip * per
+        self.tip.set(tip_amount_entry_var)
+        final_bill = p_tip + tip_amount_entry_var
+        self.total_cost.set(final_bill)
+
+    def reset(self):
+        self.total_cost.set("")
+        self.m_cost.set("")
+        self.tip.set("")
+
+
+TipCalculat
